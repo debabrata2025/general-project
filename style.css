@@ -1,0 +1,404 @@
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html
+{
+	font-size: 62.5%;
+}
+body
+{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: #FFF;
+	/* overflow: hidden; */
+}
+.header
+{
+	width: 100%;
+	height: 90vh;
+	padding: 6rem 4rem 6rem;
+	display: flex;
+}
+.header .logo 
+{ 
+	width: 50%;
+	flex-direction: column;
+}
+.header .logo h1
+{
+	display: none;
+}
+.header .logo .blackbox
+{
+	width: 100%;
+	height: 85vh;
+	background: linear-gradient(#8BD5FF, #D85AF8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: animate 3s ease-in-out infinite;
+}
+@keyframes animate 
+{
+	from {
+		background: linear-gradient(#8BD5FF, #D85AF8);
+	}to {
+		background: linear-gradient(#D85AF8, #8BD5FF);
+	}
+}
+.header .logo .blackbox img
+{
+	width: 40%;
+	height: 7rem;
+}
+.header .scbox
+{
+	width: 50%;
+	height: 85vh;
+	background: rgba(255, 255, 255, 0.5);
+	position: relative;
+	box-shadow: 0.6rem 0.2rem 0.9rem 0 rgb(0 0 0 / 40%);
+}
+.header .scbox .menu 
+{
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+}
+.header .scbox .menu ul
+{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.header .scbox .menu ul li
+{
+	list-style: none;
+}
+.header .scbox .menu ul li a
+{
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: 'Roboto', sans-serif;
+	color: #3D3B3B;
+	text-decoration: none;
+	margin-left: 1.5rem;
+	transition: 0.3s ease-in;
+}
+.header .scbox .menu ul li a:hover
+{
+	color: red;
+}
+.scbox .greet_box
+{
+	width: 100%;
+	height: 20rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	padding: 0 5rem;
+}
+.scbox .greet_box h2
+{
+	font-size: 2.5rem;
+	color: #000;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	font-family: 'Roboto', sans-serif;
+	animation: colorchange 1s  infinite;	
+}
+@keyframes colorchange
+{
+	50%{ color: red; }
+	100%{ color: #3732FF; }
+}
+.scbox .greet_box p
+{
+	color: #3D3B3B;
+	font-size: 2rem;
+	animation: colochange 1s  infinite;	
+}
+.scbox .greet_box p::selection
+{
+	background: yellow;
+}
+@keyframes colochange
+{
+	50%{ color: red; }
+	100%{ color: green; }
+}
+.scbox .slide_bar
+{
+	position: absolute;
+	top: 9rem;
+	right: 2rem;
+	font-size: 2.5rem;
+	color: #000;
+	cursor: pointer;
+
+}
+.scbox .slide_box
+{
+	width: 30rem;
+	height: 65vh;
+	background: #3B0F64;
+	position: absolute;
+	top: 13rem;
+	right: 2rem;
+	padding: 5rem 4rem 3rem;
+	text-align: center;
+	display: none;
+	transition: 3s ease;
+	overflow-x: hidden;
+}
+.scbox .slide_box.active
+{
+	display: block;
+}
+.scbox .slide_box #cnav
+{
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	color: red;
+	font-size: 1.9rem;
+	cursor: pointer;
+	user-select: none;
+}
+.scbox .slide_box #cnav:before
+{
+	content: " ";
+	width: 0%;
+	height: 0.3rem;
+	background: red;
+	position: absolute;
+	bottom: -0.4rem;
+	left: 0;
+	transition: 0.5s linear all;
+}
+.scbox .slide_box #cnav:hover:before
+{
+	width: 100%;
+}
+.scbox .slide_box #ac
+{
+	font-size: 2.5rem;
+	text-transform: capitalize;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	color: red;
+    position: relative;
+}
+.scbox .slide_box #ac:before
+{
+	content: " ";
+	width: 100%;
+	height: 0.3rem;
+	background: red;
+	position: absolute;
+	bottom: -0.4rem;
+	left: 0;
+}
+.scbox .slide_box ul li 
+{
+	list-style: none;
+	margin-top: 2.5rem;
+}
+.scbox .slide_box ul li a
+{
+	font-size: 1.8rem;
+	text-transform: capitalize;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	color: #C3C5C5;
+	position: relative;
+	transition: 0.5s linear all;
+}
+.scbox .slide_box ul li a:hover
+{
+	color: #fff;
+}
+.scbox .slide_box ul li a:before
+{
+	content: " ";
+	width: 0%;
+	height: 0.3rem;
+	background: #F12790;
+	position: absolute;
+	bottom: -0.4rem;
+	left: 0;
+	transition: 0.5s linear all;
+}
+.scbox .slide_box ul li a:hover:before
+{
+	width: 100%;
+}
+.scbox .slide_box ul li .pp:before
+{ content: " ";
+	width: 100%;
+	height: 0.3rem;
+	background: #F12790;
+	position: absolute;
+	bottom: -0.4rem;
+	left: 0;
+	transition: 0.5s linear all;
+}
+.footer
+   {
+   	
+   	width: 100%;
+   	height: 20rem;
+	background: #000;
+	margin-top: 20rem;
+	padding: 2rem;
+   }
+.footer p
+    {
+    	font-size: 3rem;
+    	color: #fff;
+    	text-align: center;
+    }
+.vid
+{
+	display: none;
+}
+.bg
+{
+	display: none;
+}
+@media (max-width: 768px)
+{
+	body
+	{
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+	}
+	.header
+	{
+		width: 90rem;
+		padding: 4rem;
+		height: auto;
+		background: red;
+		display: flex;
+		justify-content: space-around ;
+		align-items: center;
+	}
+	.header .logo .blackbox
+	{
+		display: none;
+	}
+	.header .logo h1
+	{
+		display: block;
+		font-size: 3.5rem;
+		color: #fff;
+		text-transform: capitalize;
+		font-family: 'Roboto', sans-serif;
+		font-weight: bold;
+	}
+	.header .scbox
+	{
+		height: auto;
+		background: none;
+		box-shadow: none;
+	}
+	.header .scbox .menu 
+    {
+	    height: auto;
+
+    }
+    .header .scbox .menu ul
+    {
+    	margin-right: 6rem;
+    }
+    .header .scbox .menu ul li a
+    {
+    	font-size: 2.5rem;
+    }
+    .header .scbox .menu ul li a:hover
+{
+	color: #fff;
+}
+    .bg
+    {
+    	display: block;
+    }
+    .bg .gbox
+    {
+    	width: 80rem;
+    	padding: 9rem;
+    }
+    .bg .gbox h2
+    {
+    	font-size: 8rem;
+	    color: #000;
+	    font-weight: bold;
+	    margin-bottom: 3rem;
+	    font-family: 'Roboto', sans-serif;
+	    text-align: center;
+    }
+    .bg .gbox p
+    {
+    	font-size: 4rem;
+    	text-align: justify;
+    	margin-left: 4rem;
+    }
+    .vid
+    {
+    	display: block;
+    	margin-left: 50%;
+    	transform: translate(-50%);
+    }
+	.scbox .greet_box
+	{
+		display: none;
+	}
+
+.scbox .slide_box
+{
+	width: 78rem;
+	height: 300px;
+	z-index: 555555555;
+}
+.scbox .slide_box ul
+{
+	margin-top: 2rem;
+}
+.scbox .slide_box ul li 
+{
+	list-style: none;
+	margin-top: 2rem;
+}
+.scbox .slide_box ul li a
+{
+	font-size: 2.5rem;
+}
+.scbox .slide_box #cnav
+{
+    font-size: 2.2rem;
+}
+.scbox .slide_box #ac
+{
+	font-size: 3rem;
+	color: red;
+}
+
+
+	.footer
+   {
+   	
+   	width: 90rem;
+   	margin-top: 30rem;
+   }
+}
+
+
